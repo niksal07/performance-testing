@@ -21,9 +21,12 @@ jobs:
               run: |
                 python3 -m venv venv
                 source venv/bin/activate
-                pip3 install flask
+                python3 -m ensurepip --upgrade   
+                pip install --upgrade pip        
+                pip install flask                
                 nohup python3 app.py &
                 sleep 15
+
             - name: "install k6"
               run: |
                 curl -fsSL https://dl.k6.io/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k6.gpg
