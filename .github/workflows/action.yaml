@@ -20,7 +20,7 @@ jobs:
             - name: "start flask app"
               run: |
                 python3 -m venv venv
-                nohup flask run &
+                nohup python app.py &
                 sleep 15
             - name: "install k6"
               run: |
