@@ -16,7 +16,7 @@ jobs:
             - name: "setup python"
               uses: actions/setup-python@v4
               with:
-                python-version: "3.12"
+                python-version: "3.9"
             - name: "start flask app"
               run: |
                 python3 -m venv venv
@@ -24,9 +24,9 @@ jobs:
                 sleep 15
             - name: "install k6"
               run: |
-                sudo apt install -y gnupg ca-certificates
-                curl -s https://k6.io/key.gpg | sudo apt-key add -
-                echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+                curl -fsSL https://dl.k6.io/key.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k6.gpg
+                echo "deb [signed-by=/etc/apt/trusted.gpg.d/k6.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+            
                 sudo apt update
                 sudo apt install -y k6
 
