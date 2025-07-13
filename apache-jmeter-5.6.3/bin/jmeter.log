@@ -1,0 +1,29 @@
+2025-07-13 14:58:36,897 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2025-07-13 14:58:36,926 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2025-07-13 14:58:36,926 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2025-07-13 14:58:36,938 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2025-07-13 14:58:36,938 INFO o.a.j.JMeter: Version 5.6.3
+2025-07-13 14:58:36,938 INFO o.a.j.JMeter: java.version=21.0.7
+2025-07-13 14:58:36,938 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2025-07-13 14:58:36,938 INFO o.a.j.JMeter: os.name=Linux
+2025-07-13 14:58:36,938 INFO o.a.j.JMeter: os.arch=amd64
+2025-07-13 14:58:36,938 INFO o.a.j.JMeter: os.version=6.6.87.2-microsoft-standard-WSL2
+2025-07-13 14:58:36,939 INFO o.a.j.JMeter: file.encoding=UTF-8
+2025-07-13 14:58:36,939 INFO o.a.j.JMeter: java.awt.headless=true
+2025-07-13 14:58:36,939 INFO o.a.j.JMeter: Max memory     =1073741824
+2025-07-13 14:58:36,939 INFO o.a.j.JMeter: Available Processors =8
+2025-07-13 14:58:36,957 INFO o.a.j.JMeter: Default Locale=English (EN)
+2025-07-13 14:58:36,957 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2025-07-13 14:58:36,957 INFO o.a.j.JMeter: JMeterHome=/home/nikh_devops/performance_test/library-management-system/apache-jmeter-5.6.3
+2025-07-13 14:58:36,958 INFO o.a.j.JMeter: user.dir  =/home/nikh_devops/performance_test/library-management-system/apache-jmeter-5.6.3/bin
+2025-07-13 14:58:36,958 INFO o.a.j.JMeter: PWD       =/home/nikh_devops/performance_test/library-management-system/apache-jmeter-5.6.3/bin
+2025-07-13 14:58:36,958 INFO o.a.j.JMeter: IP: 127.0.1.1 Name: LAPTOP-SQS0HUUV FullName: LAPTOP-SQS0HUUV.localdomain
+2025-07-13 14:58:36,993 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'/home/nikh_devops/performance_test/library-management-system/apache-jmeter-5.6.3/bin/report'
+2025-07-13 14:58:36,994 ERROR o.a.j.JMeter: An error occurred: 
+org.apache.jmeter.report.config.ConfigurationException: The file /home/nikh_devops/performance_test/library-management-system/apache-jmeter-5.6.3/bin/your_test_plan.jmx doesn't exist or can't be opened
+	at org.apache.jmeter.JMeter.runNonGui(JMeter.java:950) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter.startNonGui(JMeter.java:940) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter.start(JMeter.java:508) [ApacheJMeter_core.jar:5.6.3]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:259) [ApacheJMeter.jar:5.6.3]

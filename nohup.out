@@ -1,0 +1,65 @@
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [13/Jul/2025 16:26:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 16:26:20] "GET /static/bootstrap.min.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 16:26:20] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 16:26:20] "GET /static/home.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 16:26:21] "GET /static/images/bg.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 16:26:23] "[32mGET /books/search?keyword= HTTP/1.1[0m" 302 -
+127.0.0.1 - - [13/Jul/2025 16:26:23] "[32mGET /books HTTP/1.1[0m" 308 -
+[2025-07-13 16:26:23,426] ERROR in app: Exception on /books/ [GET]
+Traceback (most recent call last):
+  File "/home/nikh_devops/performance_test/library-management-system/venv/lib/python3.12/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nikh_devops/performance_test/library-management-system/venv/lib/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/venv/lib/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/venv/lib/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/venv/lib/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/routes/book.py", line 32, in home
+    b = book_manager.list()
+        ^^^^^^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/Controllers/BookManager.py", line 12, in list
+    book_list = self.dao.list(availability)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/Models/BookDAO.py", line 69, in list
+    books = self.db.query(query)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/Models/DB.py", line 25, in query
+    h = self.cur()
+        ^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/Models/DB.py", line 22, in cur
+    return self.mysql.get_db().cursor()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/venv/lib/python3.12/site-packages/flaskext/mysql.py", line 82, in get_db
+    ctx.mysql_dbs[self.prefix] = self.connect()
+                                 ^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/venv/lib/python3.12/site-packages/flaskext/mysql.py", line 65, in connect
+    return pymysql.connect(**self.connect_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nikh_devops/performance_test/library-management-system/venv/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/nikh_devops/performance_test/library-management-system/venv/lib/python3.12/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+127.0.0.1 - - [13/Jul/2025 16:26:23] "[35m[1mGET /books/ HTTP/1.1[0m" 500 -
+0
