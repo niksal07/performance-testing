@@ -19,7 +19,6 @@ jobs:
                 python-version: "3.9"
             - name: "start flask app"
               run: |
-                python3 -m venv venv
                 nohup python app.py &
                 sleep 15
             - name: "install k6"
